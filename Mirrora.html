@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mirrora — The Appearance Watch</title>
+  <meta name="description" content="Mirrora — a smart wearable that shows your appearance, gives outfit feedback, and motivates you to look and feel your best." />
+  <style>
+    /* --- Reset & base --- */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#8be9fd; --muted:#9aa4b2; --glass:rgba(255,255,255,0.03);
+      --radius:16px; --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#071021 0%, #08131e 60%); color:#e6eef6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; padding:40px 20px; display:flex; justify-content:center;}
+    .wrap{max-width:var(--maxw); width:100%;}
+
+    /* --- Header / Hero --- */
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,var(--accent), #6ee7b7); display:flex; align-items:center; justify-content:center; color:#012029; font-weight:700; font-size:18px}
+    h1{margin:0; font-size:28px}
+    p.lead{margin:6px 0 0; color:var(--muted)}
+
+    /* --- Grid layout --- */
+    main{display:grid; grid-template-columns: 1fr 420px; gap:28px}
+    section.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:22px; box-shadow: 0 6px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+
+    /* --- Left content --- */
+    .intro{display:flex; gap:18px}
+    .watch-mock{width:220px; min-height:260px; border-radius:18px; background:linear-gradient(180deg,#061827,#0a2433); display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.04);}
+    .watch-screen{width:170px; height:210px; background:linear-gradient(180deg,#0b1622,#07101a); border-radius:12px; box-shadow:inset 0 6px 16px rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:12px; text-align:center}
+
+    h2{margin:0 0 10px 0}
+    ul.feature-list{padding-left:18px; color:var(--muted)}
+
+    /* --- Right column --- */
+    .sticky{position:sticky; top:28px}
+    .price-pill{background:var(--glass); padding:10px 14px; border-radius:12px; display:inline-block; border:1px solid rgba(255,255,255,0.03); margin-bottom:12px}
+
+    /* --- Table --- */
+    table{width:100%; border-collapse:collapse; margin-top:10px}
+    th,td{padding:10px 8px; text-align:left; border-bottom:1px dashed rgba(255,255,255,0.03); color:var(--muted); font-size:14px}
+    th{color:#dff7fb}
+
+    /* --- Video / AI section --- */
+    .video-wrap{border-radius:12px; overflow:hidden; background:linear-gradient(180deg,#071528,#081a2b); border:1px solid rgba(255,255,255,0.03);}
+    .slides{padding:18px}
+    .slide{display:none}
+    .slide.active{display:block}
+    .controls{display:flex; gap:8px; margin-top:10px}
+    button{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--accent); padding:8px 12px; border-radius:10px; cursor:pointer}
+
+    /* --- Pricing cards --- */
+    .plans{display:flex; gap:10px; margin-top:12px}
+    .plan{flex:1; background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)); padding:12px; border-radius:12px}
+    .muted{color:var(--muted)}
+
+    /* --- Footer --- */
+    footer{margin-top:20px; color:var(--muted); font-size:13px}
+
+    /* Responsive */
+    @media (max-width:980px){main{grid-template-columns:1fr; } .watch-mock{display:none} .sticky{position:static}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <h1>Mirrora — The Appearance Watch</h1>
+          <p class="lead">Wearable mirror, outfit coach & confidence assistant — smart feedback to look your best every moment.</p>
+        </div>
+      </div>
+      <div>
+        <div class="price-pill">Prototype ETA: 6–9 months • Seed ready</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="intro">
+          <div class="watch-mock">
+            <div class="watch-screen" id="watchScreen">Mirrora<br><span class="muted" style="font-size:12px">your appearance — live</span></div>
+          </div>
+          <div>
+            <h2>What is Mirrora?</h2>
+            <p class="muted">Mirrora is a wrist wearable that surfaces a quick, private view of your appearance and gives AI‑powered feedback: outfit suggestions, grooming nudges, posture tips and confidence scoring — all in <strong>10 seconds</strong>.</p>
+
+            <h3 style="margin-top:10px">Core features</h3>
+            <ul class="feature-list">
+              <li><strong>Mirror Mode:</strong> quick selfie preview on your wrist screen (privacy-first: frames stored locally unless you opt-in).</li>
+              <li><strong>Appearance AI:</strong> outfit fit, color match, grooming and skin‑health cues (non-diagnostic).</li>
+              <li><strong>Motivation & Habits:</strong> nudges tied to posture, hydration, and gym streaks to improve appearance over time.</li>
+              <li><strong>Lookbook:</strong> Save outfits and rate them. Shareable with friends privately.</li>
+              <li><strong>Low-light & privacy:</strong> screen uses ambient sensing, mute mode, and quick blur on shared captures.</li>
+            </ul>
+
+            <h3 style="margin-top:12px">Target audience</h3>
+            <p class="muted">Young professionals (18–35), content creators, fashion & fitness-conscious users, and anyone who wants quick, private visual feedback before meetings or content shoots.</p>
+
+          </div>
+        </div>
+
+        <hr style="margin:16px 0; border:none; border-top:1px solid rgba(255,255,255,0.03)">
+
+        <h3>How Mirrora works — tech overview</h3>
+        <p class="muted">On-device camera + edge AI runs lightweight vision models for face/pose detection. Heavier personalization (e.g., style recommendations) runs in the cloud with user's consent using encrypted uploads. Companion phone app manages lookbooks, firmware updates and advanced analytics.</p>
+
+        <h3 style="margin-top:12px">Tech stack (example)</h3>
+        <ul class="feature-list">
+          <li>Firmware: Zephyr / FreeRTOS, secure boot</li>
+          <li>On-device ML: TensorFlow Lite Micro / MediaPipe</li>
+          <li>Mobile app: React Native / Flutter</li>
+          <li>Cloud: AWS or GCP (inference, user profiles) + KMS for keys</li>
+          <li>Privacy: differential privacy & end-to-end encryption for uploads</li>
+        </ul>
+
+        <h3 style="margin-top:12px">Estimated timeline</h3>
+        <ol class="muted">
+          <li>Month 0–3: Proof of concept, on-device camera pipeline, UI mockups</li>
+          <li>Month 3–6: Prototype hardware, pilot users, companion app alpha</li>
+          <li>Month 6–9: Beta hardware & software, manufacturability testing</li>
+        </ol>
+
+        <h3 style="margin-top:12px">Business model</h3>
+        <p class="muted">Hardware sales + subscription for premium AI personalization, cloud storage, and social features. OEM partnerships for fashion brands and gyms are secondary revenue streams.</p>
+
+        <h3 style="margin-top:12px">Sustainability</h3>
+        <p class="muted">Recyclable watch casing, modular replaceable strap, firmware updates to extend device lifetime, and low-power edge inference to minimize cloud usage.</p>
+
+      </section>
+
+      <aside class="card sticky">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px">
+            <div>
+              <div style="font-size:12px; color:var(--muted)">Estimated (stereotype) Costs — Prototype</div>
+              <div style="font-weight:700; font-size:20px">Quick cost breakdown</div>
+            </div>
+            <div style="text-align:right"><div style="font-size:12px; color:var(--muted)">Currency: INR (₹)</div></div>
+          </div>
+
+          <table>
+            <thead><tr><th>Item</th><th>Est. Cost</th></tr></thead>
+            <tbody>
+              <tr><td>PCB & Sensors (camera, IMU)</td><td>₹1,50,000</td></tr>
+              <tr><td>Prototype enclosure & 3D prints</td><td>₹40,000</td></tr>
+              <tr><td>MCU & Display</td><td>₹60,000</td></tr>
+              <tr><td>Firmware & ML dev (outsourced)</td><td>₹2,50,000</td></tr>
+              <tr><td>Mobile app (MVP)</td><td>₹2,00,000</td></tr>
+              <tr><td>Cloud infra (6–12 mo)</td><td>₹80,000</td></tr>
+              <tr><td>Testing & certifications</td><td>₹1,00,000</td></tr>
+              <tr><td>Misc (shipping, parts)</td><td>₹40,000</td></tr>
+              <tr style="font-weight:700"><td>Total (prototype)</td><td>₹9,20,000</td></tr>
+            </tbody>
+          </table>
+
+          <p class="muted" style="margin-top:10px">Mass manufacturing tooling & 1st batch (2k units) — rough estimate: ₹25–45 Lakh depending on BOM and displays.</p>
+        </div>
+
+        <hr style="margin:12px 0; border:none; border-top:1px solid rgba(255,255,255,0.03)">
+
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px">
+            <div>
+              <div style="font-size:12px; color:var(--muted)">Pricing & Subscription</div>
+              <div style="font-weight:700">Suggested</div>
+            </div>
+            <div style="text-align:right"><div style="font-size:12px; color:var(--muted)">MRP / mo</div></div>
+          </div>
+
+          <div class="plans">
+            <div class="plan"><div style="font-weight:700">Core</div><div class="muted">Device only</div><div style="margin-top:8px; font-size:18px">₹6,999</div></div>
+            <div class="plan"><div style="font-weight:700">Plus</div><div class="muted">1 yr AI subscription</div><div style="margin-top:8px; font-size:18px">₹8,999</div></div>
+            <div class="plan"><div style="font-weight:700">Pro</div><div class="muted">Enterprise / Gym bundles</div><div style="margin-top:8px; font-size:18px">Custom</div></div>
+          </div>
+
+        </div>
+
+        <hr style="margin:12px 0; border:none; border-top:1px solid rgba(255,255,255,0.03)">
+
+        <div>
+          <h3 style="margin:0 0 8px 0">AI Explainer</h3>
+          <div class="video-wrap">
+            <div class="slides" id="slides">
+              <div class="slide active" data-idx="0">
+                <h4>Welcome to Mirrora</h4>
+                <p class="muted">A quick, private appearance check on your wrist — powered by edge AI and thoughtful privacy.</p>
+              </div>
+              <div class="slide" data-idx="1">
+                <h4>How it helps</h4>
+                <p class="muted">Outfit suggestions, posture nudges, gym motivation and a daily confidence score to help form better habits.</p>
+              </div>
+              <div class="slide" data-idx="2">
+                <h4>Privacy-first design</h4>
+                <p class="muted">On-device inference by default. Cloud uploads only with explicit user consent and encryption.</p>
+              </div>
+              <div class="slide" data-idx="3">
+                <h4>Estimated costs & roadmap</h4>
+                <p class="muted">Prototype ~₹9.2L. 1st batch depends on display and BOM choices; target 6–9 months to beta.</p>
+              </div>
+            </div>
+            <div style="padding:12px; border-top:1px solid rgba(255,255,255,0.02); display:flex; justify-content:space-between; align-items:center">
+              <div style="font-size:13px; color:var(--muted)">AI voice explainer + slide demo</div>
+              <div class="controls">
+                <button id="prevBtn">Prev</button>
+                <button id="playBtn">Play</button>
+                <button id="nextBtn">Next</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="muted" style="margin-top:10px; font-size:13px">(This demo uses browser Text‑to‑Speech for a quick AI‑style explainer. Replace with a produced video for investor demos.)</p>
+        </div>
+
+        <hr style="margin:12px 0; border:none; border-top:1px solid rgba(255,255,255,0.03)">
+
+        <div>
+          <div style="font-weight:700">Contact</div>
+          <div class="muted">Founder: Jatin Yadav</div>
+          <div class="muted">Email: jy5631528@gmail.com</div>
+          <div style="margin-top:8px"><button onclick="window.location='#contact'">Get in touch</button></div>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer class="card" id="contact">
+      <h3>Ready to prototype?</h3>
+      <p class="muted">If you'd like, I can: 1) export this page as a downloadable HTML file, 2) generate investor-ready one‑page pitch copy, or 3) create a short voiceover script / storyboard for a produced AI video.</p>
+      <div style="margin-top:10px"><small class="muted">© Mirrora — appearance tech • Prototype concept</small></div>
+    </footer>
+  </div>
+
+  <script>
+    // Simple slide + TTS demo to act like an "AI powered video" explaining the product
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let idx = 0;
+    const speakTexts = [
+      'Welcome to Mirrora. A quick private appearance check on your wrist powered by edge AI and thoughtful privacy.',
+      'Mirrora helps with outfit suggestions, posture nudges, gym motivation and a daily confidence score to help you build better habits.',
+      'Mirrora is privacy-first: on device inference by default and cloud uploads only with your explicit consent and encryption.',
+      'Prototype estimate is nine lakh twenty thousand rupees and target beta in six to nine months. Contact us to join the pilot.'
+    ];
+
+    function show(i){
+      slides.forEach(s => s.classList.remove('active'));
+      slides[i].classList.add('active');
+      idx = i;
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', ()=> show((idx-1+slides.length)%slides.length));
+    document.getElementById('nextBtn').addEventListener('click', ()=> show((idx+1)%slides.length));
+
+    let speaking=false;
+    document.getElementById('playBtn').addEventListener('click', ()=>{
+      if(speaking){
+        window.speechSynthesis.cancel(); speaking=false; document.getElementById('playBtn').innerText='Play';
+        return;
+      }
+      // sequentially speak and advance slides
+      speaking=true; document.getElementById('playBtn').innerText='Stop';
+      let i=0;
+      function nextSpeak(){
+        if(!speaking || i>=speakTexts.length){ speaking=false; document.getElementById('playBtn').innerText='Play'; return; }
+        show(i);
+        const u = new SpeechSynthesisUtterance(speakTexts[i]);
+        u.rate = 1.0; u.lang='en-US';
+        u.onend = ()=>{ i++; setTimeout(nextSpeak,450); }
+        window.speechSynthesis.speak(u);
+      }
+      nextSpeak();
+    });
+
+    // small interactive watch screen demo (click to simulate quick mirror)
+    document.getElementById('watchScreen').addEventListener('click', ()=>{
+      const el = document.getElementById('watchScreen');
+      el.innerHTML = '<div style="font-size:12px;color:var(--muted)">Loading camera preview...</div>';
+      setTimeout(()=> el.innerHTML = '<strong style="font-size:14px">Mirror Ready</strong><div class="muted" style="font-size:11px">(tap to close)</div>',900)
+      setTimeout(()=>{
+        el.addEventListener('click', ()=> el.innerHTML='Mirrora<br><span class="muted" style="font-size:12px">your appearance — live</span>', {once:true})
+      },1000)
+    });
+  </script>
+</body>
+</html>
