@@ -1,0 +1,57 @@
+# Mirrora — The Appearance Watch 💫
+
+**Mirrora** is a concept startup that blends **AI + wearable technology + personal appearance tracking**.  
+It’s a futuristic smartwatch that acts as your *personal mirror on the wrist*, giving live visual feedback, outfit suggestions, posture reminders, and confidence boosts — all powered by privacy-first AI.
+
+---
+
+## 🌟 Features
+- **Mirror Mode:** Quick appearance check directly on your wrist display.  
+- **Appearance AI:** Outfit color matching, grooming tips, and style insights.  
+- **Posture & Fitness Sync:** Uses motion sensors and AI to track habits that affect how you look.  
+- **Lookbook Mode:** Save and rate your daily looks privately.  
+- **AI Voice Explainer:** Embedded TTS demo that walks through the product idea.
+
+---
+
+## 🧰 Tech Stack
+- **Frontend:** HTML, CSS, JavaScript  
+- **AI Simulation:** Browser Text-to-Speech API (for demo explainer)  
+- **Design:** Modern dark UI with neon-aqua accents  
+- **Deployment:** GitHub Pages / Netlify / Vercel (static hosting)
+
+---
+
+## 💸 Prototype Cost (Estimate)
+| Item | Est. Cost (INR) |
+|------|------------------|
+| PCB & Sensors | ₹1,50,000 |
+| Enclosure & 3D Prints | ₹40,000 |
+| MCU & Display | ₹60,000 |
+| Firmware + ML Dev | ₹2,50,000 |
+| Mobile App (MVP) | ₹2,00,000 |
+| Cloud Infra (6–12 mo) | ₹80,000 |
+| Testing & Certifications | ₹1,00,000 |
+| Misc | ₹40,000 |
+| **Total** | **₹9,20,000 (approx)** |
+
+---
+
+## 🚀 How to View Locally
+1. Download or clone this repository  
+2. Open `mirrora_website.html` in your browser  
+3. Click the **“Play”** button in the AI Explainer section to hear the automated product walkthrough  
+
+---
+
+## 👤 Founder
+**Jatin Yadav**  
+B.Tech CSE (AI), Parul University  
+📧 jy5631528@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/jatin-yadav-31390638b)
+
+---
+
+## ⚙️ License
+This project is shared for **concept demonstration** and personal portfolio purposes.  
+© 2025 Mirrora — The Appearance Watch. All rights reserved.
